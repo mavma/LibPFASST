@@ -73,7 +73,8 @@ contains
     call pf_pfasst_setup(pf)
     
     !>  Add some hooks for output
-    call pf_add_hook(pf, -1, PF_POST_ITERATION, echo_error)
+    call pf_add_hook(pf, -1, PF_POST_ITERATION, pf_echo_residual)
+    ! call pf_add_hook(pf, -1, PF_POST_ITERATION, echo_error)
 
     !>  Output run parameters
     call print_loc_options(pf,un_opt=6)
